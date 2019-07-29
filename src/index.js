@@ -10,10 +10,28 @@ var height = window.innerHeight;
 var camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 0.1, 3000 );
 var scene = new THREE.Scene();
 var material = new THREE.MeshLambertMaterial({color: 0x1B1B60});
+var material2 = new THREE.MeshLambertMaterial({color: 0x2E90D8});
+var material6 = new THREE.MeshLambertMaterial({
+    color: 0x2ffffff,
+        opacity: 0.8,
+    transparent: true});
+var material4 = new THREE.MeshLambertMaterial({
+    color: 0x2E90D8,
+    opacity: 0.8,
+    transparent: true
+});
 var geometry = new THREE.CubeGeometry(100, 100, 100);
-var geometry2 = new THREE.CubeGeometry(100, 100, 100);
+var geometry2 = new THREE.CubeGeometry(400, 10, 800);
+var geometry3 = new THREE.CubeGeometry(430, 10, 830);
+var geometry5 = new THREE.CubeGeometry(130, 10, 130);
 var mesh = new THREE.Mesh(geometry, material);
-var mesh2 = new THREE.Mesh(geometry2, material);
+var mesh2 = new THREE.Mesh(geometry2, material2);
+var mesh3 = new THREE.Mesh(geometry3, material);
+var mesh4 = new THREE.Mesh(geometry5, material4);
+var geometry4 = new THREE.CylinderGeometry(5, 5, 3, 100);
+var geometry6 = new THREE.CylinderGeometry(40, 40, 3, 100);
+var cylinder = new THREE.Mesh(geometry4, material);
+var cylinder2 = new THREE.Mesh(geometry6, material6);
 
 
 init();
@@ -48,19 +66,39 @@ function init () {
     scene.add(ambientLight);
     scene.add(pointLight);
     
-    mesh.position.set(0, 0, -1000);
+    mesh.position.set(250, 50, -1000);
     mesh.rotation.x = 0.7;
     mesh.rotation.y = 0.85;
     
     mesh.castShadow = true;
     mesh.receiveShadow = false;
     
-    mesh2.position.set(-200, 0, -1020);
+    mesh2.position.set(-250, 0, -1020);
     mesh2.rotation.x = 0.7;
     mesh2.rotation.y = 0.85;
     
+    mesh3.position.set(-250, -5, -1020);
+    mesh3.rotation.x = 0.7;
+    mesh3.rotation.y = 0.85;
+
+    mesh4.position.set(-350, 220, -1000);
+    mesh4.rotation.x = 0.7;
+    mesh4.rotation.y = 0.85;
+
+    cylinder.position.set(-570, 150, -750)
+    cylinder.rotation.x = 0.7;
+    cylinder.rotation.y = 0.85;
+
+    cylinder2.position.set(-360, 230, -750)
+    cylinder2.rotation.x = 0.7;
+    cylinder2.rotation.y = 0.85;
+    
     scene.add(mesh);
     scene.add(mesh2);
+    scene.add(mesh3);
+    scene.add(mesh4);
+    scene.add(cylinder);
+    scene.add(cylinder2);
     window.addEventListener( 'resize', onWindowResize, false );
     document.addEventListener('mousemove', onDocumentMouseMove, false);
 }
@@ -90,10 +128,10 @@ function animate() {
 
 function render () {
     renderer.render(scene, camera);
-    mesh.rotation.x += 0.01;
-    mesh.rotation.y += 0.01;
-    mesh2.rotation.x -= 0.01;
-    mesh2.rotation.y -= 0.01;
+    // mesh.rotation.x += 0.01;
+    // mesh.rotation.y += 0.01;
+    // mesh2.rotation.x -= 0.01;
+    // mesh2.rotation.y -= 0.01;
     requestAnimationFrame(render);
 }
 
