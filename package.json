@@ -1,0 +1,19 @@
+{
+  "name": "scene",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --port 8080"
+  },
+  "author": "Jhonatan Tomimatsu",
+  "license": "MIT",
+  "dependencies": {
+    "webpack-dev-server": "^3.7.2"
+  },
+  "devDependencies": {
+    "three": "^0.106.2",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
+  }
+}
