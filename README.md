@@ -8,3 +8,9 @@ The aim of the project is to create an easy to use, lightweight, 3D library with
 $ npm i
 $ npm start
 ```
+### Technologies ###
+
+- three
+- Webpack
+    - webpack-dev-server
+    - webpack-cli
